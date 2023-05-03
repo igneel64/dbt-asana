@@ -1,0 +1,11 @@
+{
+  "python.pythonPath": "./.dbtenv/bin/python",
+  "files.associations": {
+    "*.sql": "jinja-sql",
+    "**/target/**": "",
+  },
+  "sqlfluff.executablePath": "./.dbtenv/bin/sqlfluff",
+  "sqlfluff.linter.run": "onSave",
+  "sqlfluff.experimental.format.executeInTerminal": true,
+  "editor.formatOnSave": false
+}

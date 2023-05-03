@@ -1,0 +1,15 @@
+config:
+  send_anonymous_usage_stats: False
+
+sample:
+  outputs:
+    dev:
+      type: postgres
+      threads: 1
+      host: localhost
+      port: 5432
+      user: "{{ env_var('DBT_USER') }}"
+      pass: "{{ env_var('DBT_PASS') }}"
+      dbname: "{{ env_var('DATABASE_NAME') }}"
+      schema: "{{ env_var('DATABASE_SCHEMA') }}"
+  target: dev
