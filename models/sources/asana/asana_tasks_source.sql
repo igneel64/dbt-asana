@@ -1,5 +1,14 @@
+{{
+    config(
+        materialized='incremental'
+    )
+}}
+
 WITH source AS (
     SELECT * FROM {{ source('asana', 'asana_tasks') }}
+    {% if is_incremental() %}
+    WHERE updated_at > (SELECT max(task_modified_at) FROM {{ this }})
+    {% endif %}
 ),
 
 projects_agg AS (

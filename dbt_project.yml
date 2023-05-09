@@ -20,6 +20,12 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
+models:
+  dbt_asana:
+    sources:
+      asana:
+        +materialized: table
+
 # Define database and schema variables
 # vars:
 #   asana_database: your_database_name
